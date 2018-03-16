@@ -1,9 +1,9 @@
 package com.sumera.koreactorexampleapp
 
+import com.sumera.koreactor.reactor.MviReactor
 import com.sumera.koreactorexampleapp.lib.ReactorTestRule
 import com.sumera.koreactorexampleapp.lib.annotation.InitialLifecycleState
 import com.sumera.koreactorexampleapp.lib.annotation.RunAfter
-import com.sumera.koreactor.reactor.MviReactor
 import com.sumera.koreactorexampleapp.ui.feature.counter.CounterReactor
 import com.sumera.koreactorexampleapp.ui.feature.counter.contract.CounterState
 import com.sumera.koreactorexampleapp.ui.feature.counter.contract.DecrementAction
@@ -12,10 +12,10 @@ import com.sumera.koreactorexampleapp.ui.feature.counter.contract.ShowNumberIsDi
 import org.junit.Rule
 import org.junit.Test
 
-class CounterRectorTest {
+class CounterReactorTest {
 
 	@Rule @JvmField
-	val reactorTest	 = object : ReactorTestRule<CounterState>() {
+	val reactorTest	= object : ReactorTestRule<CounterState>() {
 		override fun createNewReactorInstance(): MviReactor<CounterState> {
 			return CounterReactor()
 		}
